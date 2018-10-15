@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <properties>
+        <skipTests>true</skipTests>
+        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+        <docker-maven-plugin.version>0.4.13</docker-maven-plugin.version>
+        <docker.image.prefix>luhanlin</docker.image.prefix>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <hutool.version>4.0.10</hutool.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <druid.version>1.1.9</druid.version>
+        <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
+        <mybatis-plus.version>2.1.9</mybatis-plus.version>
+    </properties>
+
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zgshfpw</groupId>
+    <artifactId>base</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <!-- 使用log4j进行日志记录需要排除以下jar -->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.springframework.boot</groupId>-->
+                    <!--<artifactId>spring-boot-starter-logging</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+            <!--使用下面这个和上面排除spring-boot-starter-logging是一样的效果
+            <exclusions>
+               <exclusion>
+                  <artifactId>logback-classic</artifactId>
+                  <groupId>ch.qos.logback</groupId>
+               </exclusion>
+               <exclusion>
+                  <artifactId>log4j-over-slf4j</artifactId>
+                  <groupId>org.slf4j</groupId>
+               </exclusion>
+            </exclusions>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--工具包-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaoleilu</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!--druid-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+            <!--mybatis-plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--mongodb-->
+            <dependency>
+                <groupId>io.opentracing.contrib</groupId>
+                <artifactId>opentracing-mongo-driver</artifactId>
+                <version>${opentracing-mongo-driver.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zgshfpw</groupId>
+                <artifactId>db-redis</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zgshfpw</groupId>
+                <artifactId>db-mongodb</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zgshfpw</groupId>
+                <artifactId>db-mysql</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zgshfpw</groupId>
+                <artifactId>db-oracle</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zgshfpw</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zgshfpw</groupId>
+                <artifactId>bean</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <modules>
+        <module>eureka</module>
+        <module>config-server</module>
+        <!--<module>common</module>-->
+        <module>db</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>repository.springframework.maven.release</id>
+            <name>Spring Framework Maven Release Repository</name>
+            <url>http://maven.springframework.org/milestone/</url>
+        </repository>
+        <repository>
+            <id>org.springframework</id>
+            <url> http://maven.springframework.org/snapshot</url>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Maven MILESTONE Repository</name>
+            <url>http://repo.spring.io/libs-milestone</url>
+        </repository>
+        <repository>
+            <id>spring-release</id>
+            <name>Spring Maven RELEASE Repository</name>
+            <url>http://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <registryUrl>http://docker.luhanlin.com.cn/v2/_catalog</registryUrl>
+                        <dockerHost>http://localhost:2375</dockerHost>
+                        <!--<dockerCertPath>C:\Users\admin\.docker\machine\machines\manager</dockerCertPath>-->
+                        <imageName>docker.luhanlin.com.cn/test/${project.artifactId}:${project.version}</imageName>
+                        <dockerDirectory>src/main/docker</dockerDirectory>
+                        <resources>
+                            <resource>
+                                <targetPath>/</targetPath>
+                                <directory>${project.build.directory}</directory>
+                                <include>${project.build.finalName}.jar</include>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

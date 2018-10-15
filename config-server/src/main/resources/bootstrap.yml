@@ -1,0 +1,15 @@
+#服务注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true # 获取实例ip地址
+
+# rsa 对称加密配置
+encrypt:
+  key-store:
+    location: classpath:/config-service.jks
+    alias: config-server
+    password: luhanlin
+    secret: luhanlin

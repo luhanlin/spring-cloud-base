@@ -1,0 +1,58 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native    #开启本地配置 默认为git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:config-repo
+# git管理配置
+#  cloud:
+#    config:
+#      retry:
+#        initial-interval: 3000
+#        multiplier: 1.5
+#        max-interval: 20000
+#        max-attempts: 6
+#      server:
+#        git:
+#          uri: http://192.168.5.127/rebuild_bussiness/config-repository.git
+#          search-paths: '{application}'
+#          username: luhanlin
+#          password: luhanlin
+#          default-label: master
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+  # 安全认证
+  security:
+    user:
+      name: luhanlin
+      password: 123
+## admin 监控配置
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:9009 #/administrator
+#        username: luhanlin
+#        password: 123
+#        instance:
+#          prefer-ip: true
+
+# 暴露所有监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
