@@ -5,7 +5,7 @@
 
     <groupId>com.luhanlin</groupId>
     <artifactId>config-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${luhanlin.version}</version>
     <packaging>jar</packaging>
 
     <name>config-server</name>
@@ -14,7 +14,7 @@
     <parent>
         <groupId>com.zgshfpw</groupId>
         <artifactId>base</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>${luhanlin.version}</version>
     </parent>
 
     <properties>

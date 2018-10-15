@@ -1,0 +1,143 @@
+system:
+  type: DEMO
+
+# ==================== MybatisPlus ====================
+mybatis-plus:
+# 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+# 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/*.xml
+##实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.luhanlin.*.entity.po
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 3
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true
+    #数据库大写下划线转换
+    capital-mode: true
+    # Sequence序列接口实现类配置
+#    key-generator: com.baomidou.mybatisplus.incrementer.OracleKeyGenerator
+    #逻辑删除配置（下面3个配置）
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+#    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    #自定义填充策略接口实现
+#    meta-object-handler: com.baomidou.springboot.MyMetaObjectHandler
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #配置JdbcTypeForNull
+    jdbc-type-for-null: 'null'
+
+
+# =========== redission ==================
+redisson:
+  singleServerConfig: true
+  idleConnectionTimeout: 10000
+  pingTimeout: 1000
+  connectTimeout: 10000
+  timeout: 3000
+  retryAttempts: 3
+  retryInterval: 1500
+  reconnectionTimeout: 3000
+  failedAttempts: 3
+  password: shfpredis0110
+  subscriptionsPerConnection: 5
+  clientName: null
+  address: "redis://127.0.0.1:6379"
+  subscriptionConnectionMinimumIdleSize: 1
+  subscriptionConnectionPoolSize: 50
+  connectionMinimumIdleSize: 32
+  connectionPoolSize: 64
+  database: 0
+  dnsMonitoring: false
+  dnsMonitoringInterval: 5000
+
+
+# =================== mongodb ===================
+mongodb:
+  primary:
+    uri: mongodb://127.0.0.1:27017/test01  # mongodb://user:pwd@ip1:port1,ip2:port2/database
+  secondary:
+    uri: mongodb://127.0.0.1:27017/test02
+
+# ==================== 数据源 ====================
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://127.0.0.1:3306/test?zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: root
+    password: Lhl-123456
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 配置监控统计拦截的filters，去掉后监控界面sql将无法统计，'wall'用于防火墙
+    #  属性类型是字符串，通过别名的方式配置扩展插件，
+    #  常用的插件有：
+    #  监控统计用的filter:stat
+    #  日志用的filter:log4j
+    #  防御sql注入的filter:wall
+    filters: stat  #  , wall, log4j
+    # 最大连接池数量
+    maxActive: 20
+    # 初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时
+    initialSize: 1
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    # 最小连接池数量
+    minIdle: 1
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    #  配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    #  验证连接有效与否的SQL，不同的数据配置不同
+    validationQuery: select 'x'
+    #  建议配置为true，不影响性能，并且保证安全性。
+    #  申请连接的时候检测，如果空闲时间大于
+    #  timeBetweenEvictionRunsMillis，
+    #  执行validationQuery检测连接是否有效。
+    testWhileIdle: true
+    #  申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+    #  这里建议配置为TRUE，防止取到的连接不可用
+    testOnBorrow: true
+    #  归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+    testOnReturn: false
+    #  是否缓存preparedStatement，也就是PSCache。
+    #  PSCache对支持游标的数据库性能提升巨大，比如说oracle。
+    #  在mysql5.5以下的版本中没有PSCache功能，建议关闭掉。
+    #  作者在5.5版本中使用PSCache，通过监控界面发现PSCache有缓存命中率记录，
+    #  该应该是支持PSCache。
+    #  打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    # 通过connectProperties属性来打开mergeSql功能，慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  redis:
+    database: 0 # Database index used by the connection factory.
+    url:  # Connection URL. Overrides host, port, and password. User is ignored. Example: redis://user:password@example.com:6379
+    host: 127.0.0.1 # Redis server host.
+    jedis:
+       pool:
+          max-active: 8 # Maximum number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+          max-idle: 8 # Maximum number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+          max-wait: -1ms # Maximum amount of time a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+          min-idle: 0 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
+    password:  # Login password of the redis server.
+    port: 6379 # Redis server port.
+    ssl: false # Whether to enable SSL support.
+    timeout: 0 # Connection timeout.
+
+#druid  stat 监控配置  用于跟 datasource.filters 包含 stat 时搭配使用 不需要时注释掉
+druid.stat:
+    #黑名单
+    deny:   # 同ip黑名单优先级高
+    #白名单
+    allow:
+    #是否能够重置数据
+    resetEnable: false
+    loginUsername: druid
+    loginPassword: 123456

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.luhanlin</groupId>
+	<artifactId>db-mysql</artifactId>
+	<version>${luhanlin.version}</version>
+	<packaging>jar</packaging>
+
+	<name>db-mysql</name>
+	<description>Demo project for db-mysql</description>
+
+	<parent>
+		<groupId>com.luhanlin</groupId>
+		<artifactId>db</artifactId>
+		<version>${luhanlin.version}</version>
+	</parent>
+
+	<properties>
+		<druid.version>1.1.9</druid.version>
+		<mysql-connector-java.version>6.0.6</mysql-connector-java.version>
+		<mybatis-plus.version>2.1.9</mybatis-plus.version>
+	</properties>
+
+	<dependencies>
+		<!-- mybatis-plus begin -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<!--<version>2.0.1.RELEASE</version>-->
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatisplus-spring-boot-starter</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+
+		<!--mybatis-plus-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-core</artifactId>
+			<version>2.1.9</version>
+		</dependency>
+
+		<!--druid-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-context</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+</project>
