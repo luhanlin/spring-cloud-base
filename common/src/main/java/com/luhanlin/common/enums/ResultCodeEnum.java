@@ -91,7 +91,9 @@ public enum ResultCodeEnum {
     // ***********业务相关错误*****************
     BusinessRepeatingError("O1001","业务重复"),
     BusinessTimedOutError("O1002","业务已超时"),
-    BusinessInvokeServiceFailed("O1003","调用服务失败");
+    BusinessInvokeServiceFailed("O1003","调用服务失败"),
+    WEAK_NET_WORK("-1", "网络异常，请稍后重试"),
+    PARAMETER_ERROR("10101", "参数错误");
 
     private String code;
     private String msg;
