@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.luhanlin</groupId>
+    <artifactId>demo-service</artifactId>
+    <version>${luhanlin.version}</version>
+    <packaging>jar</packaging>
+
+    <name>demo-service</name>
+    <description>Demo project for demo-service</description>
+
+    <parent>
+        <groupId>com.zgshfpw</groupId>
+        <artifactId>base</artifactId>
+        <version>${luhanlin.version}</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!-- Eureka客户端启动类 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!-- Config客户端启动类 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.luhanlin</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.luhanlin</groupId>
+            <artifactId>db-mongo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.luhanlin</groupId>
+            <artifactId>db-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.luhanlin</groupId>
+            <artifactId>db-mysql</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
