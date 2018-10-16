@@ -3,8 +3,15 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+      # 指定多少秒从注册中心获取一次实例服务列表 默认 30秒
+      registry-fetch-interval-seconds: 20
   instance:
-    prefer-ip-address: true # 获取实例ip地址
+    # 获取实例ip地址
+    prefer-ip-address: true
+    # 心跳包发送时间 默认 30秒
+    lease-renewal-interval-in-seconds: 60
+    # 最后一次心跳时间间隔以下值之后清楚实例列表中的值，不应该小于心跳检测时间 默认90秒
+    lease-expiration-duration-in-seconds: 100
 
 # rsa 对称加密配置
 encrypt:

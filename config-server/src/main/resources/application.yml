@@ -21,7 +21,7 @@ spring:
 #        max-attempts: 6
 #      server:
 #        git:
-#          uri: http://192.168.5.127/rebuild_bussiness/config-repository.git
+#          uri: https://github.com/luhanlin/config-repository.git
 #          search-paths: '{application}'
 #          username: luhanlin
 #          password: luhanlin
@@ -36,6 +36,8 @@ spring:
     user:
       name: luhanlin
       password: 123
+#    filter:
+#      dispatcher-types:
 ## admin 监控配置
 #  boot:
 #    admin:
