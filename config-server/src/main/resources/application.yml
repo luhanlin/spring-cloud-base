@@ -57,4 +57,12 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+# 实例信息
+info:
+  app:
+    name: "config-server"
+    description : "配置中心"
+    version: "1.0.1"
+    spring-boot-version : "2.0.5.RELEASE"
+  version: "1.0.1"
 

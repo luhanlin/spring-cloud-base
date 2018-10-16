@@ -8,8 +8,8 @@ eureka:
     hostname: localhost
     preferIpAddress: true
   server:
-    # 关闭自我保护机制
-    enableSelfPreservation: false
+    # 关闭自我保护机制 不推荐
+#    enableSelfPreservation: false
     #  清理无效的服务节点，清理间隔（单位毫秒，默认是60*1000）
     eviction-interval-timer-in-ms: 10000
   client:
