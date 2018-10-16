@@ -36,7 +36,7 @@
     <modules>
         <module>db-mysql</module>
         <module>db-mongo</module>
-        <!--<module>db-redis</module>-->
+        <module>db-redis</module>
     </modules>
 
     <dependencyManagement>
