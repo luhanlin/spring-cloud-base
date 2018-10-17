@@ -55,7 +55,7 @@ public class DataSourceConfig {
     @Bean
     @ConditionalOnProperty(name="druid.stat.loginUsername")
     public ServletRegistrationBean statViewServlet(@Qualifier(value = "druidStatProperties")DruidStatProperties druidStatProperties) {
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"/druid2/*");
         System.out.println("》》》》》》  开始进行druid控制台配置  》》》》》》》》》》");
         if(StrUtil.isNotBlank(druidStatProperties.getAllow())) {
             // 添加IP白名单
@@ -86,7 +86,7 @@ public class DataSourceConfig {
         // 添加过滤规则
         filterRegistrationBean.addUrlPatterns("/*");
         // 忽略过滤格式
-        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,");
+        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid2/*,");
         return filterRegistrationBean;
     }
 

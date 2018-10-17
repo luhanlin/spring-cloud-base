@@ -1,0 +1,37 @@
+server:
+  port: 8090
+
+spring:
+  application:
+      name: feign-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # 暴露所有服务监控端口，也可以只暴露 hystrix.stream端口
+  endpoint:
+    health:
+      show-details: ALWAYS
+info:
+  app:
+    name: "feign"
+    description : "feign服务"
+    version: "1.0.0"
+    spring-boot-version : "2.0.5.RELEASE"
+  version: "1.0.0"
+
+# feign配置
+feign:
+  compression:
+    request:
+      enabled:  true  #开启请求压缩功能
+      mime-types: text/xml;application/xml;application/json #指定压缩请求数据类型
+      min-request-size: 2048  #如果传输超过该字节，就对其进行压缩
+    response:
+    #开启响应压缩功能
+      enabled:  true
+  hystrix:
+    # 在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+    enabled: true
+#  client:

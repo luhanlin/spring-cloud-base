@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.luhanlin</groupId>
+    <artifactId>hystrix-dashboard-turbine</artifactId>
+    <version>${luhanlin.version}</version>
+    <packaging>jar</packaging>
+
+    <name>hystrix-dashboard-turbine</name>
+    <description>Demo project for hystrix-dashboard-turbine</description>
+
+    <parent>
+        <groupId>com.luhanlin</groupId>
+        <artifactId>visual</artifactId>
+        <version>${luhanlin.version}</version>
+    </parent>
+
+    <dependencies>
+        <!-- turbine 监控启动类 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+        </dependency>
+        <!-- hystrix-dashboard 仪表盘启动类 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+        <!-- 注册eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

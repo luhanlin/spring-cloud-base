@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.luhanlin</groupId>
-    <artifactId>eureka</artifactId>
+    <artifactId>visual</artifactId>
     <version>${luhanlin.version}</version>
     <packaging>jar</packaging>
 
-    <name>eureka</name>
-    <description>eureka-server</description>
+    <name>visual</name>
+    <description>Demo project for visual</description>
 
     <parent>
         <groupId>com.luhanlin</groupId>
@@ -17,11 +17,15 @@
         <version>${luhanlin.version}</version>
     </parent>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-    </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <modules>
+        <module>hystrix-dashboard-turbine</module>
+    </modules>
+
 
 </project>

@@ -12,7 +12,7 @@
     <description>Demo project for config-server</description>
 
     <parent>
-        <groupId>com.zgshfpw</groupId>
+        <groupId>com.luhanlin</groupId>
         <artifactId>base</artifactId>
         <version>${luhanlin.version}</version>
     </parent>

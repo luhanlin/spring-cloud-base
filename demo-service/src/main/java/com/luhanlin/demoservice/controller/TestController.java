@@ -35,7 +35,7 @@ public class TestController {
     }
 
     @GetMapping(value = "/{id}")
-	public ResultInfo getTest(@PathVariable("id") Integer id, String phone){
+	public ResultInfo getTest(@PathVariable("id") Integer id){
         RedisUtil.set("test","123456");
         log.info(">>>>>>>>>> redis 获取 test >>>>>>" + RedisUtil.get("test"));
         Test test = testService.queryTest(id);
