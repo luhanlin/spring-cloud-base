@@ -6,6 +6,9 @@ import com.luhanlin.dbredis.redis.utils.RedisUtil;
 import com.luhanlin.demoservice.conf.prop.CustomBean;
 import com.luhanlin.demoservice.entity.po.Test;
 import com.luhanlin.demoservice.service.TestService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheKey;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +32,7 @@ public class TestController {
     @Autowired
     private CustomBean customBean;
 
+    @HystrixCommand
     @GetMapping(value = "/hello")
     public ResultInfo hello(){
         return  ResultUtil.success(customBean.getVersion());
@@ -39,15 +43,24 @@ public class TestController {
         RedisUtil.set("test","123456");
         log.info(">>>>>>>>>> redis 获取 test >>>>>>" + RedisUtil.get("test"));
         Test test = testService.queryTest(id);
-        log.info("查询出来的test为： " + test.toString());
-
-        log.info(">>>>>> 添加test信息 >>>>>>");
-//        testService.addTest(new Test(2,"zhangsan","183"));
-
-        log.info(">>>>>> 修改test信息 >>>>>>");
-//        test.setPhone("112");
-//        testService.updateTest(test);
+        log.info("查询出来的test为： " + test);
         return ResultUtil.success(test);
 	}
+
+    @HystrixCommand
+    @PostMapping(value = "/add")
+    public ResultInfo addTest(@RequestBody Test test){
+        log.info(">>>>>> 添加test信息 >>>>>>");
+        testService.addTest(test);
+        return ResultUtil.success("添加成功...");
+    }
+
+    @HystrixCommand
+    @PutMapping(value = "/update")
+    public ResultInfo updateTest(@RequestBody Test test){
+        log.info(">>>>>> 修改test信息 >>>>>>");
+        testService.updateTest(test);
+        return ResultUtil.success("修改成功...");
+    }
 
 }

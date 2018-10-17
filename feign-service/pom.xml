@@ -29,17 +29,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!-- Config客户端启动类 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
-        </dependency>
-
-        <!-- 消息总线 配置动态配置中心 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-        </dependency>
 
         <!-- feign 启动类 -->
         <dependency>
@@ -47,15 +36,9 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-        <!-- 解析yml配置 -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-yaml</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
         <dependency>

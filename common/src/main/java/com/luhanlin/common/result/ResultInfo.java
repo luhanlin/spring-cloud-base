@@ -1,5 +1,6 @@
 package com.luhanlin.common.result;
 
+import com.luhanlin.common.constant.ResultCode;
 import com.luhanlin.common.constant.SysCode;
 import com.luhanlin.common.enums.ResultCodeEnum;
 import lombok.Data;
@@ -25,7 +26,7 @@ public class ResultInfo<T> {
     }
 
     public ResultInfo(ResultCodeEnum resultCode) {
-        this.code = SysCode.SysType + resultCode.getCode();
+        this.code = ResultCode.SysType + resultCode.getCode();
         this.msg = resultCode.getMsg();
     }
 

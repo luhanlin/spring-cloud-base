@@ -41,6 +41,17 @@
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
 
+        <!-- feign 启动类 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
         <!-- 解析yml配置 -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
