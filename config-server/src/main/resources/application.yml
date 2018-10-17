@@ -4,33 +4,33 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active: native    #开启本地配置 默认为git
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: classpath:config-repo
-# git管理配置
+#  profiles:
+#    active: native    #开启本地配置 默认为git
 #  cloud:
 #    config:
-#      retry:
-#        initial-interval: 3000
-#        multiplier: 1.5
-#        max-interval: 20000
-#        max-attempts: 6
 #      server:
-#        git:
-#          uri: https://github.com/luhanlin/config-repository.git
-#          search-paths: '{application}'
-#          username: luhanlin
-#          password: luhanlin
-#          default-label: master
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
+#        native:
+#          search-locations: classpath:config-repo
+## git管理配置
+  cloud:
+    config:
+      retry:
+        initial-interval: 3000
+        multiplier: 1.5
+        max-interval: 20000
+        max-attempts: 6
+      server:
+        git:
+          uri: https://github.com/luhanlin/config-repository.git
+          search-paths: '{application}'
+          username:
+          password:
+          default-label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   # 安全认证
   security:
     user:
@@ -38,6 +38,7 @@ spring:
       password: 123
 #    filter:
 #      dispatcher-types:
+
 ## admin 监控配置
 #  boot:
 #    admin:
@@ -48,7 +49,7 @@ spring:
 #        instance:
 #          prefer-ip: true
 
-# 暴露所有监控端口
+## 暴露所有监控端口
 management:
   endpoints:
     web:
@@ -57,12 +58,12 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-# 实例信息
+## 实例信息
 info:
   app:
     name: "config-server"
     description : "配置中心"
-    version: "1.0.1"
+    version: "1.0.0"
     spring-boot-version : "2.0.5.RELEASE"
-  version: "1.0.1"
+  version: "1.0.0"
 

@@ -18,7 +18,7 @@
         <hutool.version>4.0.10</hutool.version>
         <lombok.version>1.16.22</lombok.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <luhanlin.version>1.0.1.RELEASE</luhanlin.version>
+        <luhanlin.version>1.0.0.RELEASE</luhanlin.version>
     </properties>
 
     <parent>

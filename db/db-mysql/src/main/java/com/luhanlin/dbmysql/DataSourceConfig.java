@@ -56,7 +56,7 @@ public class DataSourceConfig {
     @ConditionalOnProperty(name="druid.stat.loginUsername")
     public ServletRegistrationBean statViewServlet(@Qualifier(value = "druidStatProperties")DruidStatProperties druidStatProperties) {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
-
+        System.out.println("》》》》》》  开始进行druid控制台配置  》》》》》》》》》》");
         if(StrUtil.isNotBlank(druidStatProperties.getAllow())) {
             // 添加IP白名单
             servletRegistrationBean.addInitParameter("allow", druidStatProperties.getAllow());

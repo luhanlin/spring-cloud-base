@@ -30,7 +30,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
  */
 @Configuration
 @RefreshScope
-@MapperScan("com.zgshfpw.*.dao")
+@MapperScan("com.luhanlin.**.dao")
 @AutoConfigureAfter(DataSourceConfig.class)
 public class MybatisPlusConfig {
 

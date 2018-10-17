@@ -1,0 +1,15 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+info:
+  app:
+    name: "demo"
+    description : "demo服务"
+    version: "1.0.1"
+    spring-boot-version : "2.0.5.RELEASE"
+  version: "1.0.1"

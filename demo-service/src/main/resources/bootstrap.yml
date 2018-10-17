@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+      name: demo
+  # 配置中心服务的地址
+  cloud:
+    config:
+      discovery:
+        # 默认false，设为true表示使用注册中心中的config-server配置而不自己配置config-server的uri
+        enabled: true
+        service_id: config-server
+      fail-fast: true
+      name: demo
+      profile:  dev # 要读取的配置文件profile属性
+      # 使用git管理配置文件时指定
+      label: master
+      username: luhanlin
+      password: 123
+
+# 指定服务注册中心的位置。
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+
