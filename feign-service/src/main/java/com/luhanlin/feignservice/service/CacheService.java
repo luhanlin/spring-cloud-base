@@ -36,6 +36,8 @@ public class CacheService {
      *  cacheKeyMethod 指定请求缓存key值设定方法 优先级大于 @CacheKey() 的方式
      *
      * CacheKey() 也是指定缓存key值，优先级较低
+     * CacheKey("id") Integer id 出现异常，测试CacheKey()读取对象属性进行key设置
+     *  java.beans.IntrospectionException: Method not found: isId
      *
      * 直接使用以下配置会出现异常：
      *   java.lang.IllegalStateException: Request caching is not available. Maybe you need to initialize the HystrixRequestContext?
@@ -49,7 +51,7 @@ public class CacheService {
      */
     @CacheResult(cacheKeyMethod = "getCacheKey")
     @HystrixCommand(commandKey = "testCache", groupKey = "CacheTestGroup", threadPoolKey = "CacheTestThreadPool")
-    public ResultInfo testCache(@CacheKey("id") Integer id){
+    public ResultInfo testCache(Integer id){
         log.info("test cache 服务调用测试。。。");
         return demoClient.getTest(id);
     }

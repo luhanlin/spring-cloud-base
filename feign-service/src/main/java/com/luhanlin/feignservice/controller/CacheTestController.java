@@ -39,7 +39,7 @@ public class CacheTestController {
 
         // 更新数据
         cacheService.updateCache(new Test(id,"wangwu","121"));
-        // 再次查询 查看日志是否走缓存,不走缓存则跟新数据进行缓存
+        // 再次查询 查看日志是否走缓存,不走缓存则再次缓存
         log.info("第二次查询： "+cacheService.testCache(id));
         // 再次查询 查看日志是否走缓存
         log.info("第二次查询： "+cacheService.testCache(id));
