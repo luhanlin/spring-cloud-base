@@ -35,7 +35,6 @@ public class CollapseController {
         log.info("进行 Collapse 远程服务调用测试,开始时间： " + LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         Test test = collapseService.testRest(id);
         log.info("进行 Collapse 远程服务调用测试,结束时间： " + LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-
         /**
          * 启用请求合并:
          *      开始时间： 2018-10-18T10:40:12.374

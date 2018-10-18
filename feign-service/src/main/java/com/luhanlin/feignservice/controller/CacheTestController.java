@@ -30,15 +30,15 @@ public class CacheTestController {
     @Autowired
     private CacheService cacheService;
 
-    @GetMapping("/{id}")
-    public ResultInfo testCache(@PathVariable("id") Integer id){
+    @GetMapping("/{id}/{name}")
+    public ResultInfo testCache(@PathVariable("id") Integer id,@PathVariable("name") String name){
         // 查询缓存数据
         log.info("第一次查询： "+cacheService.testCache(id));
         // 再次查询 查看日志是否走缓存
         log.info("第二次查询： "+cacheService.testCache(id));
 
         // 更新数据
-        cacheService.updateCache(new Test(id,"wangwu","121"));
+        cacheService.updateCache(new Test(id,name,"121"));
         // 再次查询 查看日志是否走缓存,不走缓存则再次缓存
         log.info("第二次查询： "+cacheService.testCache(id));
         // 再次查询 查看日志是否走缓存

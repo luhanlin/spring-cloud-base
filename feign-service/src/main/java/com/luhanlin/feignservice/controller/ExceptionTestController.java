@@ -40,7 +40,7 @@ public class ExceptionTestController {
      *   成HystrixBadRequestException,从而不执行回调.
      */
     @HystrixCommand(ignoreExceptions = {RuntimeException.class},
-                    fallbackMethod = "buildFallbacktestFeign")
+                    fallbackMethod = "buildFallbackTestException")
     @GetMapping("/{id}")
     public ResultInfo testException(@PathVariable("id") Integer id){
         log.info("test exception 服务调用异常抛出测试。。。");

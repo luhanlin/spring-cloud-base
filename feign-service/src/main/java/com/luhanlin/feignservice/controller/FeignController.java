@@ -93,7 +93,7 @@ public class FeignController {
     private Integer randomlyRunLong(){
         Random rand = new Random();
 
-        int randomNum = rand.nextInt((3 - 1) + 1) + 1;
+        int randomNum = rand.nextInt(3) + 1;
 
         if (randomNum==3) {
             try {

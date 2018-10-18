@@ -32,8 +32,6 @@ public class RestClient {
                         "http://demo-service/test/{id}",
                         HttpMethod.GET,
                         null, ResultInfo.class, id);
-
         return restExchange.getBody();
     }
-
 }

@@ -62,7 +62,7 @@ public class CacheService {
      */
     @CacheResult(cacheKeyMethod = "getCacheKey")
     @HystrixCommand(commandKey = "testCache", groupKey = "CacheTestGroup", threadPoolKey = "CacheTestThreadPool")
-    public ResultInfo testCache(Integer id){
+    public ResultInfo testCache(@CacheKey("id")Integer id){
         log.info("test cache 服务调用测试。。。");
         return demoClient.getTest(id);
     }
