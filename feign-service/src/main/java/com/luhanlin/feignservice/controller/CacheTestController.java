@@ -24,13 +24,13 @@ import org.springframework.web.bind.annotation.*;
  */
 @Log4j2
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/cache")
 public class CacheTestController {
 
     @Autowired
     private CacheService cacheService;
 
-    @GetMapping("/cache/{id}")
+    @GetMapping("/{id}")
     public ResultInfo testCache(@PathVariable("id") Integer id){
         // 查询缓存数据
         log.info("第一次查询： "+cacheService.testCache(id));

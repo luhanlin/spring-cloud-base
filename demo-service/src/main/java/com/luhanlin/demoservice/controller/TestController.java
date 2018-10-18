@@ -13,6 +13,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * 类详细描述：TEST 服务接口
  *
@@ -32,12 +34,12 @@ public class TestController {
     @Autowired
     private CustomBean customBean;
 
-    @HystrixCommand
     @GetMapping(value = "/hello")
     public ResultInfo hello(){
         return  ResultUtil.success(customBean.getVersion());
     }
 
+    @HystrixCommand
     @GetMapping(value = "/{id}")
 	public ResultInfo getTest(@PathVariable("id") Integer id){
         RedisUtil.set("test","123456");
@@ -63,4 +65,15 @@ public class TestController {
         return ResultUtil.success("修改成功...");
     }
 
+    @HystrixCommand
+    @GetMapping(value = "/collapse/{id}")
+    public Test collapse(@PathVariable("id") Integer id){
+        return testService.queryTest(id);
+    }
+
+    @HystrixCommand
+    @GetMapping(value = "/collapse/findAll")
+    public List<Test> collapseFindAll(@RequestParam(value = "ids") List<Integer> ids){
+        return testService.findAll(ids);
+    }
 }

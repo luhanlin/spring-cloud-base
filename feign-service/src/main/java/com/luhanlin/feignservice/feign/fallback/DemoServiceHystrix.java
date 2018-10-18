@@ -8,6 +8,8 @@ import com.luhanlin.feignservice.feign.DemoClient;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * 类详细描述：demo 服务远程调用后备类
  *    注：经过测试，此后备类仅仅在远程服务调用发生异常或调用超时触发
@@ -42,5 +44,17 @@ public class DemoServiceHystrix implements DemoClient {
     public ResultInfo updateTest(Test test) {
         log.info("DEMO 服务调用 updateTest() 方法失败");
         return ResultUtil.warn(ResultCodeEnum.BusinessInvokeServiceFailed,"DEMO 服务调用 updateTest() 方法失败");
+    }
+
+    @Override
+    public Test collapse(Integer id) {
+        log.info("DEMO 服务调用 collapse() 方法失败");
+        return null;
+    }
+
+    @Override
+    public List<Test> collapseFindAll(List<Integer> ids) {
+        log.info("DEMO 服务调用 collapseFindAll() 方法失败");
+        return null;
     }
 }

@@ -25,7 +25,7 @@ import java.util.Random;
  */
 @Log4j2
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/exception")
 public class ExceptionTestController {
 
     @Autowired
@@ -41,7 +41,7 @@ public class ExceptionTestController {
      */
     @HystrixCommand(ignoreExceptions = {RuntimeException.class},
                     fallbackMethod = "buildFallbacktestFeign")
-    @GetMapping("/exception/{id}")
+    @GetMapping("/{id}")
     public ResultInfo testException(@PathVariable("id") Integer id){
         log.info("test exception 服务调用异常抛出测试。。。");
         if (id == 1){

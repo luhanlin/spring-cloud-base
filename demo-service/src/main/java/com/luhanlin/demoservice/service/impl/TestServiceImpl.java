@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 /**
  * 类详细描述：
@@ -37,5 +39,10 @@ public class TestServiceImpl implements TestService {
     @Transactional
     public int updateTest(Test test) {
         return testDao.updateById(test);
+    }
+
+    @Override
+    public List<Test> findAll(List<Integer> ids) {
+        return testDao.selectBatchIds(ids);
     }
 }

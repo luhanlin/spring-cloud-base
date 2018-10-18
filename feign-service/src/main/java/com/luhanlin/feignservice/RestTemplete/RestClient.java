@@ -1,6 +1,7 @@
 package com.luhanlin.feignservice.RestTemplete;
 
 import com.luhanlin.common.result.ResultInfo;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -23,6 +24,7 @@ public class RestClient {
     @Autowired
     RestTemplate restTemplate;
 
+    @HystrixCommand
     public ResultInfo getTest(Integer id){
         log.info(">>>>>>>>> 进入restTemplate 方法调用 >>>>>>>>>>>>");
         ResponseEntity<ResultInfo> restExchange =

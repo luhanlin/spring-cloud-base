@@ -2,6 +2,8 @@ package com.luhanlin.demoservice.service;
 
 import com.luhanlin.demoservice.entity.po.Test;
 
+import java.util.List;
+
 /**
  * 类详细描述：test 接口类
  *
@@ -17,4 +19,6 @@ public interface TestService {
     int addTest(Test test);
 
     int updateTest(Test test);
+
+    List<Test> findAll(List<Integer> ids);
 }
