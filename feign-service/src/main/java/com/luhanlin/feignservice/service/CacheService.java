@@ -3,7 +3,9 @@ package com.luhanlin.feignservice.service;
 import com.luhanlin.common.bean.Test;
 import com.luhanlin.common.result.ResultInfo;
 import com.luhanlin.feignservice.feign.DemoClient;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheKey;
 import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheRemove;
 import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
@@ -19,6 +21,15 @@ import org.springframework.stereotype.Service;
  * @mail allen_lu_hh@163.com
  * 创建时间：2018/10/18 上午12:13
  */
+
+// 类级别属性配置
+@DefaultProperties(
+    commandProperties={
+            // 请求必须达到以下参数以上才有可能触发，也就是10秒內发生连续调用的最小参数
+            @HystrixProperty(name="circuitBreaker.requestVolumeThreshold", value="10"),
+            // 请求到达requestVolumeThreshold 上限以后，调用失败的请求百分比
+            @HystrixProperty(name="circuitBreaker.errorThresholdPercentage", value="75")}
+)
 @Log4j2
 @Service
 public class CacheService {
