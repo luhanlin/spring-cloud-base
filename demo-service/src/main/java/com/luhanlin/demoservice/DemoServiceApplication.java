@@ -13,7 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @RefreshScope
-@ServletComponentScan
 @EnableAutoConfiguration(exclude={
         DataSourceAutoConfiguration.class,
 })

@@ -16,7 +16,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class LogRequestBodyAdvice implements RequestBodyAdvice {
 
     private Logger logger = LoggerFactory.getLogger(LogRequestBodyAdvice.class);

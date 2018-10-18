@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class LogResponseBodyAdvice implements ResponseBodyAdvice {
 
     private Logger logger = LoggerFactory.getLogger(LogResponseBodyAdvice.class);
