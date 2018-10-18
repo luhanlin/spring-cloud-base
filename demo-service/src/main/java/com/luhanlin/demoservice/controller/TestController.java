@@ -7,8 +7,6 @@ import com.luhanlin.demoservice.conf.prop.CustomBean;
 import com.luhanlin.demoservice.entity.po.Test;
 import com.luhanlin.demoservice.service.TestService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheKey;
-import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
