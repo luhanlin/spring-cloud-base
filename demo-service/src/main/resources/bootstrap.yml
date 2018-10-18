@@ -16,8 +16,8 @@ spring:
       profile:  dev # 要读取的配置文件profile属性
       # 使用git管理配置文件时指定
       label: master
-      username: luhanlin
-      password: 123
+      username: "{cipher}AQCQIHL3WJXKQzrzgzHDQpISJDDweir5JIhqpe2l71NO3hWxvfcQg6hLQtR9T0TZOJPk/KHR2znd71xLwAQic6M/B9jVA3k378Zf5GbuoDYuHDyd+X0qXC/bWKe9dIfgvOgcsFuwM9/inghvSzml30vHY3TSqNnjPHfIHVJ+OXBwbgNAzpVywdP+ftr1uoGGPaAT4LgwNvxrtK1AzlMusCf4CNJSdval3Y1mNXLzg4eicp8G4LXBhd4lxZmUUx4I0lQizyIfs6JAiT6KqXvBA9mfr7GDyL+J9lykAVvB4R0UQwx1guwDMSZsXf9PWf8sHk6az7yihmkRrbvLgbRVA+tGNtFMR5LSZlYAfGgtizezKzyVrXo91//Lqrsup1pwrnQ="
+      password: "{cipher}AQCJ+nH/ZaI2e/A7mHvaVu6Q3B9V9KsNci/regm01DOQwIH45+f0KsnuZLSISPHYoTFFS3DpZMMQGXEdHTd/q6v+Fqx0Ch0YwAWqdEFqC7Stpht0uPTmEBu1etVH5cHkahTABiabox8pIsM4jPlmPSUgSd1gnzpI0Aeem64Bni5AChOOoxxbmcyCfmOl9uTKHQdbWAeXugeQLj6KKY3C1Is+v4TB7IsvpntALMAZskK4Mb/fwSsTpkwZpocOmRRdH6fWeL79VT2qKAksjrOnB6RFqbaTuN864zwZfd+lMBZvl/j846faVLkpWliUwyy4z8PoXq219SFogXUPRW4C6nILPFDthIaQhMUIA22pR/yzrf0Q/+8aqpEa+dXVnsmdjfw="
 
 # 指定服务注册中心的位置。
 eureka:

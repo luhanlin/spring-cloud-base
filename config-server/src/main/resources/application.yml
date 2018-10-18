@@ -23,8 +23,8 @@ spring:
         git:
           uri: https://github.com/luhanlin/config-repository.git
           search-paths: '{application}'
-          username:
-          password:
+          username: "{cipher}AQCQIHL3WJXKQzrzgzHDQpISJDDweir5JIhqpe2l71NO3hWxvfcQg6hLQtR9T0TZOJPk/KHR2znd71xLwAQic6M/B9jVA3k378Zf5GbuoDYuHDyd+X0qXC/bWKe9dIfgvOgcsFuwM9/inghvSzml30vHY3TSqNnjPHfIHVJ+OXBwbgNAzpVywdP+ftr1uoGGPaAT4LgwNvxrtK1AzlMusCf4CNJSdval3Y1mNXLzg4eicp8G4LXBhd4lxZmUUx4I0lQizyIfs6JAiT6KqXvBA9mfr7GDyL+J9lykAVvB4R0UQwx1guwDMSZsXf9PWf8sHk6az7yihmkRrbvLgbRVA+tGNtFMR5LSZlYAfGgtizezKzyVrXo91//Lqrsup1pwrnQ="
+          password: "{cipher}AQBQJIZkuXhrr/Juy4uEp/VmBt0B9eHc6TwdARn046hWLXrllTyT/DpSi873TieSwtPJJVXup2Cud2HUPYHOB8lxdNRbcPPFDT6Qflp07AkDwlqXJvSIj3fyZNgmqmdXgw+BEYLMwA6O0K+xkJ1GF50XCwj5KVBR+5Q8oS0+/XPtu2Cr2OAOAwTs+SNLyQohoS5vR2BqXgTBH8fZRxQPrpdCOFkoLGQ+mRf4WLqtayY5w2hLZOFVuSD3hvt6BQxysrUIei9mj9oOiWvBvzTttCypB2oLeLEw8WTdDhl4/1pFT3WKbJ9NsHHmq/0rCnB/R8mOu2v6vuSm5nvzwYUXnlYsDz4REXrDtTULN8ws5MxN8ac+ZGYNEVMs/R+xTa/BAlc="
           default-label: master
   rabbitmq:
     host: localhost
@@ -34,8 +34,8 @@ spring:
   # 安全认证
   security:
     user:
-      name: luhanlin
-      password: 123
+      name: "{cipher}AQCQIHL3WJXKQzrzgzHDQpISJDDweir5JIhqpe2l71NO3hWxvfcQg6hLQtR9T0TZOJPk/KHR2znd71xLwAQic6M/B9jVA3k378Zf5GbuoDYuHDyd+X0qXC/bWKe9dIfgvOgcsFuwM9/inghvSzml30vHY3TSqNnjPHfIHVJ+OXBwbgNAzpVywdP+ftr1uoGGPaAT4LgwNvxrtK1AzlMusCf4CNJSdval3Y1mNXLzg4eicp8G4LXBhd4lxZmUUx4I0lQizyIfs6JAiT6KqXvBA9mfr7GDyL+J9lykAVvB4R0UQwx1guwDMSZsXf9PWf8sHk6az7yihmkRrbvLgbRVA+tGNtFMR5LSZlYAfGgtizezKzyVrXo91//Lqrsup1pwrnQ="
+      password: "{cipher}AQCJ+nH/ZaI2e/A7mHvaVu6Q3B9V9KsNci/regm01DOQwIH45+f0KsnuZLSISPHYoTFFS3DpZMMQGXEdHTd/q6v+Fqx0Ch0YwAWqdEFqC7Stpht0uPTmEBu1etVH5cHkahTABiabox8pIsM4jPlmPSUgSd1gnzpI0Aeem64Bni5AChOOoxxbmcyCfmOl9uTKHQdbWAeXugeQLj6KKY3C1Is+v4TB7IsvpntALMAZskK4Mb/fwSsTpkwZpocOmRRdH6fWeL79VT2qKAksjrOnB6RFqbaTuN864zwZfd+lMBZvl/j846faVLkpWliUwyy4z8PoXq219SFogXUPRW4C6nILPFDthIaQhMUIA22pR/yzrf0Q/+8aqpEa+dXVnsmdjfw="
 #    filter:
 #      dispatcher-types:
 
@@ -44,8 +44,8 @@ spring:
 #    admin:
 #      client:
 #        url: http://localhost:9009 #/administrator
-#        username: luhanlin
-#        password: 123
+#        username: "{cipher}AQCQIHL3WJXKQzrzgzHDQpISJDDweir5JIhqpe2l71NO3hWxvfcQg6hLQtR9T0TZOJPk/KHR2znd71xLwAQic6M/B9jVA3k378Zf5GbuoDYuHDyd+X0qXC/bWKe9dIfgvOgcsFuwM9/inghvSzml30vHY3TSqNnjPHfIHVJ+OXBwbgNAzpVywdP+ftr1uoGGPaAT4LgwNvxrtK1AzlMusCf4CNJSdval3Y1mNXLzg4eicp8G4LXBhd4lxZmUUx4I0lQizyIfs6JAiT6KqXvBA9mfr7GDyL+J9lykAVvB4R0UQwx1guwDMSZsXf9PWf8sHk6az7yihmkRrbvLgbRVA+tGNtFMR5LSZlYAfGgtizezKzyVrXo91//Lqrsup1pwrnQ="
+#        password: "{cipher}AQCJ+nH/ZaI2e/A7mHvaVu6Q3B9V9KsNci/regm01DOQwIH45+f0KsnuZLSISPHYoTFFS3DpZMMQGXEdHTd/q6v+Fqx0Ch0YwAWqdEFqC7Stpht0uPTmEBu1etVH5cHkahTABiabox8pIsM4jPlmPSUgSd1gnzpI0Aeem64Bni5AChOOoxxbmcyCfmOl9uTKHQdbWAeXugeQLj6KKY3C1Is+v4TB7IsvpntALMAZskK4Mb/fwSsTpkwZpocOmRRdH6fWeL79VT2qKAksjrOnB6RFqbaTuN864zwZfd+lMBZvl/j846faVLkpWliUwyy4z8PoXq219SFogXUPRW4C6nILPFDthIaQhMUIA22pR/yzrf0Q/+8aqpEa+dXVnsmdjfw="
 #        instance:
 #          prefer-ip: true
 
