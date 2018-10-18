@@ -23,8 +23,8 @@ spring:
         git:
           uri: https://github.com/luhanlin/config-repository.git
           search-paths: '{application}'
-          username:
-          password:
+          username: luhanlin
+          password: lhl19931030
           default-label: master
   rabbitmq:
     host: localhost
