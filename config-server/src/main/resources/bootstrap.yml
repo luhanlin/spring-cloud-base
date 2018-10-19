@@ -18,7 +18,7 @@ eureka:
 # rsa 对称加密配置
 encrypt:
   key-store:
-    location: classpath:/config-service.jks
-    alias: config-server
-    password: luhanlin
-    secret: luhanlin
+    location: # classpath:/config-service.jks
+    alias: # config-server
+    password:
+    secret:
