@@ -1,0 +1,26 @@
+spring:
+  # 配置中心服务的地址
+  cloud:
+    config:
+      discovery:
+        enabled: true                                 # 默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
+        service_id: config-server
+      fail-fast: true
+      name: gateway
+      profile:  dev # 要读取的配置文件profile属性
+      label: master
+      username: ENC(gbmWUDwPFVCJSRyNmAzU14WX0fIKzmoQ) # luhanlin
+      password: ENC(rILkkAsljh/nwfxVnZ11yw==) # 123
+
+#eureka.client.serviceUrl.defaultZone属性对应服务注册中心的配置内容，指定服务注册中心的位置。
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+
+## jasypt加解密配置
+jasypt.encryptor.password: test-jasypt
+

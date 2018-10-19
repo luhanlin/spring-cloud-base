@@ -1,0 +1,28 @@
+server:
+  port: 9030
+spring:
+  application:
+    name: zuul-gateway
+
+#  rabbitmq:
+#    addresses: 127.0.0.1
+#    port: 5672
+#    username: test
+#    password: ENC(+TwOCrlhlNd5lft9jAybxw==)
+#    virtual-host: sleuth
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # 暴露所有服务监控端口，也可以只暴露 hystrix.stream端口
+  endpoint:
+    health:
+      show-details: ALWAYS
+info:
+  app:
+    name: "gateway"
+    description : "网关服务"
+    version: "1.0.0"
+    spring-boot-version : "2.0.5.RELEASE"
+  version: "1.0.0"
