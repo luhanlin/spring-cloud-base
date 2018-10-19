@@ -16,8 +16,8 @@ spring:
       profile:  dev # 要读取的配置文件profile属性
       # 使用git管理配置文件时指定
       label: master
-      username: luhanlin
-      password: 123
+      username: ENC(gbmWUDwPFVCJSRyNmAzU14WX0fIKzmoQ) # luhanlin
+      password: ENC(rILkkAsljh/nwfxVnZ11yw==) # 123
 
 # 指定服务注册中心的位置。
 eureka:
@@ -27,4 +27,7 @@ eureka:
   instance:
     hostname: localhost
     preferIpAddress: true
+
+## jasypt加解密配置
+jasypt.encryptor.password: test-jasypt
 

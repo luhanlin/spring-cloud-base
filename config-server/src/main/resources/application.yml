@@ -29,8 +29,8 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    username: guest
-    password: guest
+    username: test
+    password: test
   # 安全认证
   security:
     user:
@@ -67,3 +67,9 @@ info:
     spring-boot-version : "2.0.5.RELEASE"
   version: "1.0.0"
 
+#Setting logging levels
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.luhanlin: DEBUG

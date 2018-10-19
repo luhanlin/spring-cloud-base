@@ -17,6 +17,7 @@
         <java.version>1.8</java.version>
         <hutool.version>4.0.10</hutool.version>
         <lombok.version>1.16.22</lombok.version>
+        <jasypt.version>2.1.0</jasypt.version>
         <fastjson.version>1.2.47</fastjson.version>
         <luhanlin.version>1.0.0.RELEASE</luhanlin.version>
     </properties>
@@ -51,6 +52,12 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt.version}</version>
         </dependency>
 
     </dependencies>
