@@ -6,6 +6,9 @@ import com.luhanlin.feignservice.RestTemplete.RestClient;
 import com.luhanlin.feignservice.feign.DemoClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +26,7 @@ import java.util.Random;
  * @mail allen_lu_hh@163.com
  * 创建时间：2018/10/17 下午1:38
  */
+@Api(value = "/test",tags = "Feign服务调用测试api")
 @Log4j2
 @RestController
 @RequestMapping("/test")
@@ -34,6 +38,9 @@ public class FeignController {
     @Autowired
     private RestClient restClient;
 
+
+    @ApiOperation(value = "feign远程服务调用测试",notes = "使用延迟测试服务器的短路由")
+    @ApiImplicitParam(name = "id",value = "用户id")
     @HystrixCommand(
             // 开启此项 feign调用的回退处理会直接调用此方法
             fallbackMethod = "buildFallbacktestFeign",

@@ -14,12 +14,10 @@ management:
     health:
       show-details: ALWAYS
 info:
-  app:
-    name: "feign"
-    description : "feign服务"
-    version: "1.0.0"
-    spring-boot-version : "2.0.5.RELEASE"
-  version: "1.0.0"
+  name: @project.artifactId@
+  parent: @project.parent.artifactId@
+  description: @project.description@
+  version: @project.version@
 
 # feign配置
 feign:

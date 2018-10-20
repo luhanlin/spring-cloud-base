@@ -19,10 +19,9 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
 info:
-  app:
-    name: "gateway"
-    description : "网关服务"
-    version: "1.0.0"
-    spring-boot-version : "2.0.5.RELEASE"
-  version: "1.0.0"
+  name: @project.artifactId@
+  parent: @project.parent.artifactId@
+  description : @project.description@
+  version: @project.version@

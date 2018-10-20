@@ -1,0 +1,53 @@
+server:
+  port: 9009
+
+spring:
+  profiles:
+    active: prod
+# 便服务器可以访问受保护的客户端端点
+#  boot:
+#    admin:
+#      client:
+#        instance:
+#          metadata:
+#            user:
+#              name: luhanlin
+#              password: 123
+  # 配置中心服务的地址
+  application:
+      name: monitor
+  # 控制台彩色输出
+  output:
+      ansi:
+        enabled: ALWAYS
+
+## 指定服务注册中心的位置。
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    hostname: localhost
+    preferIpAddress: true
+
+---
+# 选择激活对应环境的配置，如果是dev则代表不用认证就能访问监控页，prod代表需要认证
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: prod
+  security:
+    user:
+      name: luhanlin
+      password: 123
+eureka:
+  instance:
+    metadata-map:
+      user:
+        name: luhanlin
+        password: 123

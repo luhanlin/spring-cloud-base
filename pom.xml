@@ -168,6 +168,22 @@
         <module>zuul-gateway</module>
     </modules>
 
+    <!-- 华为Maven镜像 当然你也可以用阿里的-->
+    <repositories>
+        <repository>
+            <id>huaweicloud</id>
+            <url>https://repo.huaweicloud.com/repository/maven/</url>
+            <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

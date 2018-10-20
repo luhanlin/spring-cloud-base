@@ -24,6 +24,11 @@ logging:
       netflix:
         eureka: OFF
         discovery: OFF
+info:
+  name: @project.artifactId@
+  parent: @project.parent.artifactId@
+  description: @project.description@
+  version: @project.version@
 
 management:
   endpoints:

@@ -60,12 +60,10 @@ management:
       show-details: ALWAYS
 ## 实例信息
 info:
-  app:
-    name: "config-server"
-    description : "配置中心"
-    version: "1.0.0"
-    spring-boot-version : "2.0.5.RELEASE"
-  version: "1.0.0"
+  name: @project.artifactId@
+  parent: @project.parent.artifactId@
+  description: @project.description@
+  version: @project.version@
 
 #Setting logging levels
 logging:

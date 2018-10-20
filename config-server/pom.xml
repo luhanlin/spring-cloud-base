@@ -30,11 +30,10 @@
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
         <!-- admin 客户端引入 -->
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>2.0.1</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>de.codecentric</groupId>-->
+            <!--<artifactId>spring-boot-admin-starter-client</artifactId>-->
+        <!--</dependency>-->
         <!-- security 安全控制 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

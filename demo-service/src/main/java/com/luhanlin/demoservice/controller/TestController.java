@@ -7,6 +7,9 @@ import com.luhanlin.demoservice.conf.prop.CustomBean;
 import com.luhanlin.demoservice.entity.po.Test;
 import com.luhanlin.demoservice.service.TestService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +24,7 @@ import java.util.List;
  * @mail allen_lu_hh@163.com
  * 创建时间：2018/10/16 下午3:03
  */
+@Api(value = "Test服务API",tags = "提供基本的CRUD接口")
 @Log4j2
 @RestController
 @RequestMapping(value = "/test")
@@ -37,6 +41,8 @@ public class TestController {
         return  ResultUtil.success(customBean.getVersion());
     }
 
+    @ApiOperation(value = "feign远程服务调用测试",notes = "查询test")
+    @ApiImplicitParam(name = "id",value = "用户id")
     @HystrixCommand
     @GetMapping(value = "/{id}")
 	public ResultInfo getTest(@PathVariable("id") Integer id){

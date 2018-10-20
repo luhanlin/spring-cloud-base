@@ -7,12 +7,10 @@ management:
     health:
       show-details: ALWAYS
 info:
-  app:
-    name: "demo"
-    description : "demo服务"
-    version: "1.0.1"
-    spring-boot-version : "2.0.5.RELEASE"
-  version: "1.0.1"
+  name: @project.artifactId@
+  parent: @project.parent.artifactId@
+  description: @project.description@
+  version: @project.version@
 
 # feign配置
 feign:

@@ -19,6 +19,8 @@
         <lombok.version>1.16.22</lombok.version>
         <jasypt.version>2.1.0</jasypt.version>
         <fastjson.version>1.2.47</fastjson.version>
+        <swagger-ui.version>2.9.2</swagger-ui.version>
+        <swagger2.version>2.9.2</swagger2.version>
         <luhanlin.version>1.0.0.RELEASE</luhanlin.version>
     </properties>
 
@@ -60,6 +62,31 @@
             <version>${jasypt.version}</version>
         </dependency>
 
+        <!-- swagger-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger-ui.version}</version>
+        </dependency>
+
+        <!-- swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger2.version}</version>
+        </dependency>
+        <!-- 解决FluentIterable.class找不到问题 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>26.0-jre</version>
+        </dependency>
+        <!-- java8 不需要添加，高版本需要添加 -->
+        <!--<dependency>-->
+            <!--<groupId>javax.xml.bind</groupId>-->
+            <!--<artifactId>jaxb-api</artifactId>-->
+            <!--<version>2.3.0</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

@@ -6,7 +6,7 @@
     <groupId>com.luhanlin</groupId>
     <artifactId>visual</artifactId>
     <version>${luhanlin.version}</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>visual</name>
     <description>Demo project for visual</description>
@@ -25,6 +25,7 @@
 
     <modules>
         <module>hystrix-dashboard-turbine</module>
+        <module>admin-server</module>
     </modules>
 
 
