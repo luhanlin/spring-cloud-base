@@ -206,10 +206,10 @@
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>1.0.0</version>
                     <configuration>
-                        <registryUrl>http://docker.luhanlin.com.cn/v2/_catalog</registryUrl>
-                        <dockerHost>http://localhost:2375</dockerHost>
+                        <registryUrl>http://127.0.0.1:5000/v2/_catalog</registryUrl>
+                        <dockerHost>http://localhost:2376</dockerHost>
                         <!--<dockerCertPath>C:\Users\admin\.docker\machine\machines\manager</dockerCertPath>-->
-                        <imageName>docker.luhanlin.com.cn/test/${project.artifactId}:${project.version}</imageName>
+                        <imageName>${project.artifactId}:${project.version}</imageName>
                         <dockerDirectory>src/main/docker</dockerDirectory>
                         <resources>
                             <resource>

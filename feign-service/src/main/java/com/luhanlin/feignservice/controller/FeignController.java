@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Random;
 
 /**
@@ -67,16 +70,17 @@ public class FeignController {
     @GetMapping("/feign/{id}")
     public ResultInfo testFeign(@PathVariable("id") Integer id){
         log.info("使用feign进行远程服务调用测试。。。");
-
+        LocalDateTime now = LocalDateTime.now();
+        log.info("远程调用开始,时间为： " + now.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         ResultInfo test = demoClient.getTest(id);
-
+        log.info("远程调用结束,时间为： " + ChronoUnit.MILLIS.between(now,LocalDateTime.now()));
         log.info("服务调用获取的数据为： " + test.toString());
         /**
          * hystrix 默认调用超时时间为1秒
          *
          * 此处需要配置 fallbackMethod 属性才会生效
          */
-        log.info("服务延时：" + randomlyRunLong() + " 秒");
+//        log.info("服务延时：" + randomlyRunLong() + " 秒");
         return test;
     }
 

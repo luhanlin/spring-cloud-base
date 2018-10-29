@@ -2,8 +2,6 @@ package com.luhanlin.common.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -37,9 +35,9 @@ public class SwaggerConf {
                 .title("api文档")
                 .description("restful 风格接口")
                 //服务条款网址
-                //.termsOfServiceUrl("http://blog.csdn.net/forezp")
+                //.termsOfServiceUrl("")
                 .version("1.0")
-                //.contact(new Contact("帅呆了", "url", "email"))
+                //.contact(new Contact("hello", "url", "email"))
                 .build();
     }
 
