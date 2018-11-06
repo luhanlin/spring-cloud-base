@@ -47,6 +47,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.luhanlin</groupId>
             <artifactId>common</artifactId>
         </dependency>

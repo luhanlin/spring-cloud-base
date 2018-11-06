@@ -4,7 +4,23 @@ server:
 spring:
   application:
       name: feign-service
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: test
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      #将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+      probability: 1.0
+  zipkin:
+    base-url: http://192.168.8.111:9411/
+#    enabled: false
+    sender:
+      type: web
 management:
   endpoints:
     web:
@@ -14,10 +30,10 @@ management:
     health:
       show-details: ALWAYS
 info:
-  name: @project.artifactId@
-  parent: @project.parent.artifactId@
-  description: @project.description@
-  version: @project.version@
+  name: '@project.artifactId@'
+  parent: '@project.parent.artifactId@'
+  description: '@project.description@'
+  version: '@project.version@'
 
 # feign配置
 feign:

@@ -8,10 +8,10 @@ management:
       show-details: ALWAYS
 
 info:
-  name: @project.artifactId@
-  parent: @project.parent.artifactId@
-  description: @project.description@
-  version: @project.version@
+  name: '@project.artifactId@'
+  parent: '@project.parent.artifactId@'
+  description: '@project.description@'
+  version: '@project.version@'
 
 
 

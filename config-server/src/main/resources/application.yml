@@ -60,10 +60,10 @@ management:
       show-details: ALWAYS
 ## 实例信息
 info:
-  name: @project.artifactId@
-  parent: @project.parent.artifactId@
-  description: @project.description@
-  version: @project.version@
+  name: '@project.artifactId@'
+  parent: '@project.parent.artifactId@'
+  description: '@project.description@'
+  version: '@project.version@'
 
 #Setting logging levels
 logging:
