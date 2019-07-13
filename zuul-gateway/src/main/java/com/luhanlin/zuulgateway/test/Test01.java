@@ -1,7 +1,5 @@
 package com.luhanlin.zuulgateway.test;
 
-import java.util.Scanner;
-
 /**
  * 类详细描述：
  *
@@ -35,12 +33,12 @@ public class Test01 {
         stringBuilderStatic2.append("old method`s append");
     }
 
-    public static void main(String[] args) {
-        method(stringStatic);
-        System.out.println(stringStatic);
-
-        method(stringBuilderStatic, stringBuilderStatic);
-        System.out.println(stringBuilderStatic);
-    }
+//    public static void main(String[] args) {
+//        method(stringStatic);
+//        System.out.println(stringStatic);
+//
+//        method(stringBuilderStatic, stringBuilderStatic);
+//        System.out.println(stringBuilderStatic);
+//    }
 
 }

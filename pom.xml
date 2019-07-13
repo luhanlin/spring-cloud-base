@@ -18,6 +18,7 @@
         <druid.version>1.1.9</druid.version>
         <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
         <mybatis-plus.version>3.0-RELEASE</mybatis-plus.version>
+        <opentracing-mongo-driver.version>0.0.4</opentracing-mongo-driver.version>
     </properties>
 
 
@@ -91,8 +92,9 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
+
             <dependency>
-                <groupId>com.xiaoleilu</groupId>
+                <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
@@ -136,6 +138,7 @@
                 <artifactId>db-redis</artifactId>
                 <version>${luhanlin.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.luhanlin</groupId>
                 <artifactId>db-mongo</artifactId>
