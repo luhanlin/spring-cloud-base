@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <hutool.version>4.0.10</hutool.version>
+        <hutool.version>4.1.12</hutool.version>
         <lombok.version>1.16.22</lombok.version>
         <jasypt.version>2.1.0</jasypt.version>
         <fastjson.version>1.2.47</fastjson.version>
